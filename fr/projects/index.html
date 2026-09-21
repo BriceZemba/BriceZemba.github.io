@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projets | Brice Zemba</title>
+<meta name="description" content="Projets de recherche et code open source : apprentissage par renforcement pour O-RAN, agents à graphes de neurones, GPT depuis zéro, interprétabilité et télédétection.">
+<link rel="canonical" href="https://bricezemba.github.io/fr/projects/">
+<link rel="alternate" hreflang="fr" href="https://bricezemba.github.io/fr/projects/">
+<link rel="alternate" hreflang="en" href="https://bricezemba.github.io/projects/">
+<link rel="alternate" hreflang="x-default" href="https://bricezemba.github.io/projects/">
+<link rel="alternate" type="application/rss+xml" title="Brice Zemba" href="/feed.xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projets | Brice Zemba">
+<meta property="og:description" content="Projets de recherche et code open source : apprentissage par renforcement pour O-RAN, agents à graphes de neurones, GPT depuis zéro, interprétabilité et télédétection.">
+<meta property="og:url" content="https://bricezemba.github.io/fr/projects/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/fr/">Brice Zemba</a>
+    <nav aria-label="Main">
+      <ul><li><a href="/fr/#about">À propos</a></li><li><a href="/fr/projects/" aria-current="page">Projets</a></li><li><a href="/fr/blog/">Écrits</a></li><li><a href="/fr/teaching-talks/">Enseignement</a></li><li><a href="/fr/cv/">CV</a></li></ul>
+    </nav>
+    <div class="tools">
+      <a class="lang" href="/projects/" hreflang="en" lang="en" aria-label="Read in English">EN</a>
+      <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Basculer le mode sombre"><span aria-hidden="true">&#9680;</span></button>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<section class="page-head">
+  <h1>Projets</h1>
+  <p class="lede">Projets de recherche et code open source. Quand un résultat est modeste ou négatif, je le dis.</p>
+</section>
+<section class="cards one">
+  <article class="card">
+  <ul class="chips"><li>Télédétection</li><li>Évaluation</li></ul>
+  <h3>Détection précoce de la fusariose du maïs par séries temporelles satellitaires</h3>
+  <p>Données radar Sentinel-1, optiques Sentinel-2 et météo sur un site pilote du Gharb (campagne 2024, 18 parcelles). Random Forest, MiniROCKET et un encodeur Presto gelé ont été comparés selon un même protocole de validation par parcelle. Un contrôle négatif sur la fenêtre avant semis, sans maïs en terre, atteignait encore une AUC de 0,78, et la seule position une AUC de 0,79 : parcelles infectées et saines étaient confondues dans l&#39;espace. La conclusion honnête est que la performance apparente ne peut pas être attribuée au signal de la maladie sans un meilleur plan d&#39;expérience.</p>
+  
+  <p class="meta">2026</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>Apprentissage par renforcement</li><li>Réseaux sans fil</li></ul>
+  <h3>Allocation de ressources économe en énergie pour O-RAN par apprentissage par renforcement</h3>
+  <p>Un environnement Gym sur mesure et un agent PPO écrit depuis zéro pour un problème de contrôle sous contraintes (état de dimension 15, 9 actions continues), avec un canal AR(1), un trafic markovien et une hiérarchie de contraintes où la sécurité passe d&#39;abord. Il atteint +32,6 % de QoS et 43,1 % d&#39;énergie en moins par rapport à une référence statique.</p>
+  <p class="links"><a href="https://github.com/BriceZemba/Energy-Aware-Resource-Allocation-for-O-RAN-using-Reinforcement-Learning" target="_blank" rel="noopener noreferrer">Code</a><span aria-hidden="true"> · </span><a href="https://github.com/BriceZemba/Energy-Aware-Resource-Allocation-for-O-RAN-using-Reinforcement-Learning/blob/main/Technical_Report.pdf" target="_blank" rel="noopener noreferrer">Rapport technique</a></p>
+  <p class="meta">2025</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>Systèmes multi-agents</li><li>Réseaux de neurones sur graphes</li></ul>
+  <h3>Coordination multi-agents décentralisée par réseaux de neurones sur graphes</h3>
+  <p>Des agents qui se coordonnent à partir d&#39;observations locales de voisinage uniquement, sans contrôleur central. L&#39;apprentissage par curriculum améliore l&#39;efficacité d&#39;échantillonnage de 40 %.</p>
+  <p class="links"><a href="https://github.com/BriceZemba/trustworthy-ran-orchestration" target="_blank" rel="noopener noreferrer">Code</a></p>
+  <p class="meta">2025</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>LLM</li><li>Génération augmentée par récupération</li></ul>
+  <h3>Un GPT depuis les premiers principes, avec RAG sur graphe de connaissances</h3>
+  <p>Attention, encodage positionnel et génération autorégressive implémentés à partir des équations et entraînés sur 40 M de tokens, couplés à un graphe de connaissances Neo4j (plus de 200 nœuds, relations typées) pour la génération augmentée par récupération, avec 80 % de précision top-3.</p>
+  <p class="links"><a href="https://github.com/BriceZemba/llm-from-scratch" target="_blank" rel="noopener noreferrer">Code</a><span aria-hidden="true"> · </span><a href="https://hal.science/view/index/docid/5481094" target="_blank" rel="noopener noreferrer">Préprint</a><span aria-hidden="true"> · </span><a href="https://medium.com/@bricezemba336/beyond-the-api-implementing-a-gpt-architecture-from-first-principles-e6079962e08d" target="_blank" rel="noopener noreferrer">Article</a></p>
+  <p class="meta">2025</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>Interprétabilité</li></ul>
+  <h3>Extraction de règles symboliques avec DeepRED et SHAP</h3>
+  <p>Extrait des règles symboliques lisibles à partir de réseaux de neurones entraînés et les associe à des attributions de Shapley (fidélité de 92 %), puis mesure de combien les explications varient sous perturbation des entrées.</p>
+  <p class="links"><a href="https://github.com/BriceZemba/interpretable-deep-models" target="_blank" rel="noopener noreferrer">Code</a><span aria-hidden="true"> · </span><a href="https://hal.science/view/index/docid/5495532" target="_blank" rel="noopener noreferrer">Préprint</a></p>
+  <p class="meta">2025 à 2026</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>Cybersécurité</li><li>Modèles de séquences</li></ul>
+  <h3>Anticiper les cyberattaques avec un Transformer</h3>
+  <p>Un Transformer qui prédit l&#39;action suivante la plus probable sur un graphe MITRE ATT&amp;CK structuré (14 catégories, plus de 200 actions) sous contraintes de précédence.</p>
+  <p class="links"><a href="https://hal.science/view/index/docid/5485705" target="_blank" rel="noopener noreferrer">Préprint</a><span aria-hidden="true"> · </span><a href="https://medium.com/@bricezemba336/pr%C3%A9dire-la-prochaine-attaque-le-transformer-au-service-de-la-cyber-threat-intelligence-74169aa2ddd7" target="_blank" rel="noopener noreferrer">Article</a></p>
+  <p class="meta">2025 à 2026</p>
+</article>
+  <article class="card">
+  <ul class="chips"><li>Sûreté de l&#39;IA</li><li>Red-teaming</li></ul>
+  <h3>Red-teaming de LLM en langues africaines (défi Zindi Trust and Safety)</h3>
+  <p>Prompts adverses contre pawa-gemma, N-ATLaS, InkubaLM et AfroLM au sein de l&#39;équipe SecondEtre. Seuls pawa-gemma (swahili) et N-ATLaS (haoussa, yoruba, igbo) ont produit de vraies sorties nuisibles, et la qualité comme la reproductibilité ont primé sur la quantité. Meilleur score : 0,85.</p>
+  
+  
+</article>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>&copy; 2026 Wendemi Brice Roméo Zemba</span>
+    <span>Site statique, sans suivi, sans cookies.</span>
+    <span><a href="/feed.xml">Flux RSS</a></span>
+  </div>
+</footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

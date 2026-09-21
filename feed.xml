@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Wendemi Brice Roméo Zemba</title>
+  <link>https://bricezemba.github.io/</link>
+  <description>Engineer in Data Science and AI based in Rabat. Interpretable machine learning, multi-agent reinforcement learning, and learning from multi-sensor data.</description>
+  <language>en</language>
+  <item>
+    <title>Cutting Cloud Costs by 40% with Machine Learning: A Complete Implementation Guide</title>
+    <link>https://medium.com/@bricezemba336/cutting-cloud-costs-by-40-with-machine-learning-a-complete-implementation-guide-62f777bad339</link>
+    <guid isPermaLink="true">https://medium.com/@bricezemba336/cutting-cloud-costs-by-40-with-machine-learning-a-complete-implementation-guide-62f777bad339</guid>
+    <pubDate>Sat, 31 Jan 2026 09:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Prédire la Prochaine Attaque : Le Transformer au Service de la Cyber Threat Intelligence</title>
+    <link>https://medium.com/@bricezemba336/pr%C3%A9dire-la-prochaine-attaque-le-transformer-au-service-de-la-cyber-threat-intelligence-74169aa2ddd7</link>
+    <guid isPermaLink="true">https://medium.com/@bricezemba336/pr%C3%A9dire-la-prochaine-attaque-le-transformer-au-service-de-la-cyber-threat-intelligence-74169aa2ddd7</guid>
+    <pubDate>Fri, 30 Jan 2026 09:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Beyond the API: Implementing a GPT Architecture from First Principles</title>
+    <link>https://medium.com/@bricezemba336/beyond-the-api-implementing-a-gpt-architecture-from-first-principles-e6079962e08d</link>
+    <guid isPermaLink="true">https://medium.com/@bricezemba336/beyond-the-api-implementing-a-gpt-architecture-from-first-principles-e6079962e08d</guid>
+    <pubDate>Sun, 25 Jan 2026 09:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
