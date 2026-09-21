@@ -540,8 +540,167 @@ const languages = {
   fr: "Français : langue maternelle (C2). Anglais : professionnel (B2+), écriture scientifique. Allemand et néerlandais : débutant.",
 };
 
+// ---------- Research map: themes, project links, extras ----------
+
+const themes = [
+  {
+    key: "trust",
+    x: 118, y: 170,
+    short: { en: "Interpretable and trustworthy ML", fr: "ML interprétable et fiable" },
+    desc: {
+      en: "When can a model, or its explanation, be trusted? Rule extraction, explanation stability, negative controls, red-teaming.",
+      fr: "Quand peut-on faire confiance à un modèle, ou à son explication ? Extraction de règles, stabilité des explications, contrôles négatifs, red-teaming.",
+    },
+  },
+  {
+    key: "rl",
+    x: 262, y: 86,
+    short: { en: "RL and multi-agent systems", fr: "RL et systèmes multi-agents" },
+    desc: {
+      en: "Sequential decisions under constraints, from a PPO agent built from scratch to agents that coordinate without a central controller.",
+      fr: "Décisions séquentielles sous contraintes, d'un agent PPO écrit depuis zéro à des agents qui se coordonnent sans contrôleur central.",
+    },
+  },
+  {
+    key: "gnn",
+    x: 470, y: 86,
+    short: { en: "Graph neural networks", fr: "Réseaux de neurones sur graphes" },
+    desc: {
+      en: "Structured local representations: agents that reason over their neighbourhood in a graph.",
+      fr: "Représentations locales structurées : des agents qui raisonnent sur leur voisinage dans un graphe.",
+    },
+  },
+  {
+    key: "seq",
+    x: 604, y: 180,
+    short: { en: "Sequence models and LLMs", fr: "Modèles de séquences et LLM" },
+    desc: {
+      en: "Models implemented from their equations: a GPT with knowledge-graph RAG and a Transformer that anticipates attack chains.",
+      fr: "Des modèles implémentés à partir de leurs équations : un GPT avec RAG sur graphe de connaissances et un Transformer qui anticipe des chaînes d'attaques.",
+    },
+  },
+  {
+    key: "rs",
+    x: 360, y: 330,
+    short: { en: "Multi-sensor remote sensing", fr: "Télédétection multi-capteurs" },
+    desc: {
+      en: "Sentinel-1 radar, Sentinel-2 optical and weather data for early disease detection, with an honest evaluation.",
+      fr: "Radar Sentinel-1, optique Sentinel-2 et météo pour la détection précoce de maladies, avec une évaluation honnête.",
+    },
+  },
+];
+
+const projectMeta = {
+  "thesis-fusarium": { themes: ["rs", "trust"], short: { en: "Fusarium thesis", fr: "Mémoire fusariose" } },
+  "oran-rl": { themes: ["rl"], short: { en: "O-RAN RL", fr: "RL pour O-RAN" } },
+  "gnn-agents": { themes: ["rl", "gnn"], short: { en: "GNN agents", fr: "Agents GNN" } },
+  "gpt-scratch": { themes: ["seq"], short: { en: "GPT from scratch", fr: "GPT depuis zéro" } },
+  "deepred-shap": { themes: ["trust"], short: { en: "DeepRED + SHAP", fr: "DeepRED + SHAP" } },
+  "attack-chains": { themes: ["seq"], short: { en: "ATT&CK Transformer", fr: "Transformer ATT&CK" } },
+  "zindi-redteam": { themes: ["trust", "seq"], short: { en: "LLM red-teaming", fr: "Red-teaming de LLM" } },
+};
+for (const p of allProjects) Object.assign(p, projectMeta[p.id]);
+
+const map = {
+  title: { en: "Research map", fr: "Carte de recherche" },
+  intro: {
+    en: "My projects and the questions that connect them. Hover or focus a node to see its links, click to open the projects.",
+    fr: "Mes projets et les questions qui les relient. Survolez ou activez un nœud pour voir ses liens, cliquez pour ouvrir les projets.",
+  },
+  hint: {
+    en: "Big nodes are research themes, small nodes are projects.",
+    fr: "Les grands nœuds sont des thèmes de recherche, les petits des projets.",
+  },
+  themeCount: { en: "{n} projects", fr: "{n} projets" },
+  ariaLabel: { en: "Graph of research themes and projects", fr: "Graphe des thèmes de recherche et des projets" },
+};
+
+const stats = [
+  { n: 3, label: { en: "preprints on HAL", fr: "préprints sur HAL" } },
+  { n: 10000, suffix: "+", label: { en: "readers on Medium", fr: "lecteurs sur Medium" } },
+  { n: "projects", label: { en: "research projects", fr: "projets de recherche" } },
+  { n: 40, suffix: "M", label: { en: "tokens, a GPT trained from scratch", fr: "tokens, un GPT entraîné depuis zéro" } },
+];
+
+const negatives = {
+  title: { en: "Negative results", fr: "Résultats négatifs" },
+  intro: {
+    en: "The results that did not go my way taught me the most, so I keep them in plain sight.",
+    fr: "Les résultats qui n'ont pas tourné comme prévu m'ont le plus appris, alors je les garde bien en vue.",
+  },
+  lessonLabel: { en: "Lesson", fr: "Leçon" },
+  items: [
+    {
+      title: { en: "A control run that should have failed did not", fr: "Un contrôle qui aurait dû échouer n'a pas échoué" },
+      what: {
+        en: "Retrained on the pre-sowing window, with no maize in the ground, the model still separated infected from healthy plots (AUC 0.78).",
+        fr: "Réentraîné sur la fenêtre avant semis, sans maïs en terre, le modèle séparait encore les parcelles infectées des saines (AUC 0,78).",
+      },
+      lesson: {
+        en: "Healthy and infected plots sat in different blocks, so the model was recognising the block. Experimental design limits a result more than the algorithm does.",
+        fr: "Parcelles saines et infectées étaient dans des blocs différents : le modèle reconnaissait le bloc. Le plan d'expérience borne un résultat plus que l'algorithme.",
+      },
+    },
+    {
+      title: { en: "Position alone almost matched the satellite bands", fr: "La seule position égalait presque les bandes satellites" },
+      what: {
+        en: "Latitude and longitude alone, with no imagery, reached AUC 0.79 against 0.97 for all 90 variables in the first experiment.",
+        fr: "La latitude et la longitude seules, sans aucune image, atteignaient une AUC de 0,79 contre 0,97 pour les 90 variables dans la première expérience.",
+      },
+      lesson: {
+        en: "Always test a trivial baseline that cannot possibly see the phenomenon.",
+        fr: "Toujours tester une référence triviale qui ne peut pas voir le phénomène.",
+      },
+    },
+    {
+      title: { en: "More prompts did not mean more harm found", fr: "Plus de prompts n'a pas voulu dire plus de failles trouvées" },
+      what: {
+        en: "Red-teaming four African-language models, only two produced genuinely harmful outputs.",
+        fr: "En red-teamant quatre modèles en langues africaines, seuls deux ont produit de vraies sorties nuisibles.",
+      },
+      lesson: {
+        en: "Quality and reproducibility of each attack mattered more than volume.",
+        fr: "La qualité et la reproductibilité de chaque attaque comptaient plus que le volume.",
+      },
+    },
+  ],
+};
+
+const palette = {
+  placeholder: { en: "Search pages, projects, links", fr: "Chercher pages, projets, liens" },
+  open: { en: "Search", fr: "Rechercher" },
+  none: { en: "No result", fr: "Aucun résultat" },
+  hint: { en: "Up and down to move, Enter to open, Esc to close", fr: "Haut et bas pour naviguer, Entrée pour ouvrir, Échap pour fermer" },
+  groups: {
+    page: { en: "Pages", fr: "Pages" },
+    section: { en: "Sections", fr: "Sections" },
+    project: { en: "Projects", fr: "Projets" },
+    link: { en: "Links", fr: "Liens" },
+    action: { en: "Actions", fr: "Actions" },
+  },
+  actionTheme: { en: "Toggle dark mode", fr: "Basculer le mode sombre" },
+  actionLang: { en: "Read in French", fr: "Lire en anglais" },
+  label: { en: "Command palette", fr: "Palette de commandes" },
+};
+
+const photo = {
+  alt: {
+    en: "Portrait of Wendemi Brice Roméo Zemba",
+    fr: "Portrait de Wendemi Brice Roméo Zemba",
+  },
+};
+
+const extraUi = {
+  updated: { en: "Last updated", fr: "Dernière mise à jour" },
+  filterAll: { en: "All", fr: "Tous" },
+  filterLabel: { en: "Filter projects by theme", fr: "Filtrer les projets par thème" },
+  statsLabel: { en: "Key numbers", fr: "Chiffres clés" },
+  noMatch: { en: "No project matches this filter.", fr: "Aucun projet pour ce filtre." },
+};
+
 module.exports = {
   ORIGIN, person, ui, meta, hero, news, about, education, experience,
   projects, allProjects, awards, certifications, posts, preprints,
   teaching, skills, languages,
+  themes, map, stats, negatives, palette, photo, extraUi,
 };

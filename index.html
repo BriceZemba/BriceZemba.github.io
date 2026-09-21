@@ -29,6 +29,7 @@
       <ul><li><a href="/#about">About</a></li><li><a href="/projects/">Work</a></li><li><a href="/blog/">Writing</a></li><li><a href="/teaching-talks/">Teaching</a></li><li><a href="/cv/">CV</a></li></ul>
     </nav>
     <div class="tools">
+      <button id="palette-open" class="lang" type="button" hidden aria-label="Search (Ctrl+K)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span class="k">Search</span></button>
       <a class="lang" href="/fr/" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a>
       <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode"><span aria-hidden="true">&#9680;</span></button>
     </div>
@@ -37,7 +38,7 @@
 <main id="main" class="wrap">
 
 <section class="hero" aria-labelledby="name">
-  <div class="monogram" aria-hidden="true">BZ</div>
+  <div class="hero-visual" data-photo-probe="jpg,png,webp" data-alt="Portrait of Wendemi Brice Roméo Zemba"><div class="monogram" id="monogram" aria-hidden="true">BZ</div></div>
   <div>
     <p class="role">Engineer in Data Science and AI · Rabat, Morocco</p>
     <h1 id="name">Wendemi Brice Roméo Zemba</h1>
@@ -49,6 +50,8 @@
     </p>
   </div>
 </section>
+
+<section class="stats" aria-label="Key numbers"><ul><li><strong data-count="3" data-suffix="" data-locale="en">3</strong><span>preprints on HAL</span></li><li><strong data-count="10000" data-suffix="+" data-locale="en">10,000+</strong><span>readers on Medium</span></li><li><strong data-count="7" data-suffix="" data-locale="en">7</strong><span>research projects</span></li><li><strong data-count="40" data-suffix="M" data-locale="en">40M</strong><span>tokens, a GPT trained from scratch</span></li></ul></section>
 
 <section id="news" aria-labelledby="h-news">
   <h2 id="h-news">News</h2>
@@ -63,6 +66,85 @@
   <p>I write about what I build on Medium and release code and preprints openly. I am looking for MSc and PhD opportunities in machine learning research.</p>
   <h3 class="sub">Research interests</h3>
   <ul class="chips"><li>Interpretable machine learning</li><li>Multi-agent reinforcement learning</li><li>Graph neural networks</li><li>Sequence models and LLMs</li><li>Multi-sensor remote sensing</li></ul>
+</section>
+
+<section id="map" aria-labelledby="h-map">
+  <h2 id="h-map">Research map</h2>
+  <p class="lede small">My projects and the questions that connect them. Hover or focus a node to see its links, click to open the projects.</p>
+  <div class="map-wrap">
+    <svg class="graph" viewBox="0 0 720 400" role="group" aria-label="Graph of research themes and projects">
+      <g class="edges">
+      <line class="edge" data-p="thesis-fusarium" data-t="rs" x1="239.0" y1="250.0" x2="360" y2="330"/>
+      <line class="edge" data-p="thesis-fusarium" data-t="trust" x1="239.0" y1="250.0" x2="118" y2="170"/>
+      <line class="edge" data-p="oran-rl" data-t="rl" x1="216.2" y1="30.4" x2="262" y2="86"/>
+      <line class="edge" data-p="gnn-agents" data-t="rl" x1="366.0" y1="86.0" x2="262" y2="86"/>
+      <line class="edge" data-p="gnn-agents" data-t="gnn" x1="366.0" y1="86.0" x2="470" y2="86"/>
+      <line class="edge" data-p="gpt-scratch" data-t="seq" x1="668.8" y1="148.5" x2="604" y2="180"/>
+      <line class="edge" data-p="deepred-shap" data-t="trust" x1="46.7" y1="159.7" x2="118" y2="170"/>
+      <line class="edge" data-p="attack-chains" data-t="seq" x1="673.8" y1="197.7" x2="604" y2="180"/>
+      <line class="edge" data-p="zindi-redteam" data-t="trust" x1="361.0" y1="175.0" x2="118" y2="170"/>
+      <line class="edge" data-p="zindi-redteam" data-t="seq" x1="361.0" y1="175.0" x2="604" y2="180"/>
+      </g>
+      <g class="themes">
+      <a class="node theme" href="/projects/#trust" data-t="trust" data-cap="Interpretable and trustworthy ML: When can a model, or its explanation, be trusted? Rule extraction, explanation stability, negative controls, red-teaming. (3 projects)" aria-label="Interpretable and trustworthy ML, 3 projects">
+        <circle cx="118" cy="170" r="26"/>
+        <text class="tcount" x="118" y="170">3</text>
+        <text class="tlabel" x="118" y="216">Interpretable and trustworthy ML</text>
+      </a>
+      <a class="node theme" href="/projects/#rl" data-t="rl" data-cap="RL and multi-agent systems: Sequential decisions under constraints, from a PPO agent built from scratch to agents that coordinate without a central controller. (2 projects)" aria-label="RL and multi-agent systems, 2 projects">
+        <circle cx="262" cy="86" r="26"/>
+        <text class="tcount" x="262" y="86">2</text>
+        <text class="tlabel" x="262" y="132">RL and multi-agent systems</text>
+      </a>
+      <a class="node theme" href="/projects/#gnn" data-t="gnn" data-cap="Graph neural networks: Structured local representations: agents that reason over their neighbourhood in a graph. (1 projects)" aria-label="Graph neural networks, 1 projects">
+        <circle cx="470" cy="86" r="26"/>
+        <text class="tcount" x="470" y="86">1</text>
+        <text class="tlabel" x="470" y="132">Graph neural networks</text>
+      </a>
+      <a class="node theme" href="/projects/#seq" data-t="seq" data-cap="Sequence models and LLMs: Models implemented from their equations: a GPT with knowledge-graph RAG and a Transformer that anticipates attack chains. (3 projects)" aria-label="Sequence models and LLMs, 3 projects">
+        <circle cx="604" cy="180" r="26"/>
+        <text class="tcount" x="604" y="180">3</text>
+        <text class="tlabel" x="604" y="226">Sequence models and LLMs</text>
+      </a>
+      <a class="node theme" href="/projects/#rs" data-t="rs" data-cap="Multi-sensor remote sensing: Sentinel-1 radar, Sentinel-2 optical and weather data for early disease detection, with an honest evaluation. (1 projects)" aria-label="Multi-sensor remote sensing, 1 projects">
+        <circle cx="360" cy="330" r="26"/>
+        <text class="tcount" x="360" y="330">1</text>
+        <text class="tlabel" x="360" y="376">Multi-sensor remote sensing</text>
+      </a>
+      </g>
+      <g class="projs">
+      <a class="node proj" href="/projects/#thesis-fusarium" data-p="thesis-fusarium" data-themes="rs trust" data-cap="Early detection of Fusarium in maize from satellite time series" aria-label="Early detection of Fusarium in maize from satellite time series">
+        <circle cx="239.0" cy="250.0" r="8"/>
+        <text class="plabel" x="252.0" y="254.0" text-anchor="start">Fusarium thesis</text>
+      </a>
+      <a class="node proj" href="/projects/#oran-rl" data-p="oran-rl" data-themes="rl" data-cap="Energy-aware resource allocation for O-RAN with reinforcement learning" aria-label="Energy-aware resource allocation for O-RAN with reinforcement learning">
+        <circle cx="216.2" cy="30.4" r="8"/>
+        <text class="plabel" x="229.2" y="34.4" text-anchor="start">O-RAN RL</text>
+      </a>
+      <a class="node proj" href="/projects/#gnn-agents" data-p="gnn-agents" data-themes="rl gnn" data-cap="Decentralised multi-agent coordination with graph neural networks" aria-label="Decentralised multi-agent coordination with graph neural networks">
+        <circle cx="366.0" cy="86.0" r="8"/>
+        <text class="plabel" x="353.0" y="90.0" text-anchor="end">GNN agents</text>
+      </a>
+      <a class="node proj" href="/projects/#gpt-scratch" data-p="gpt-scratch" data-themes="seq" data-cap="A GPT from first principles, with knowledge-graph RAG" aria-label="A GPT from first principles, with knowledge-graph RAG">
+        <circle cx="668.8" cy="148.5" r="8"/>
+        <text class="plabel" x="655.8" y="152.5" text-anchor="end">GPT from scratch</text>
+      </a>
+      <a class="node proj" href="/projects/#deepred-shap" data-p="deepred-shap" data-themes="trust" data-cap="Symbolic rule extraction with DeepRED and SHAP" aria-label="Symbolic rule extraction with DeepRED and SHAP">
+        <circle cx="46.7" cy="159.7" r="8"/>
+        <text class="plabel" x="59.7" y="163.7" text-anchor="start">DeepRED + SHAP</text>
+      </a>
+      <a class="node proj" href="/projects/#attack-chains" data-p="attack-chains" data-themes="seq" data-cap="Anticipating cyber attacks with a Transformer" aria-label="Anticipating cyber attacks with a Transformer">
+        <circle cx="673.8" cy="197.7" r="8"/>
+        <text class="plabel" x="660.8" y="201.7" text-anchor="end">ATT&amp;CK Transformer</text>
+      </a>
+      <a class="node proj" href="/projects/#zindi-redteam" data-p="zindi-redteam" data-themes="trust seq" data-cap="Red-teaming LLMs in African languages (Zindi Trust and Safety challenge)" aria-label="Red-teaming LLMs in African languages (Zindi Trust and Safety challenge)">
+        <circle cx="361.0" cy="175.0" r="8"/>
+        <text class="plabel" x="348.0" y="179.0" text-anchor="end">LLM red-teaming</text>
+      </a>
+      </g>
+    </svg>
+  </div>
+  <p class="map-caption" id="map-caption" aria-live="polite">Big nodes are research themes, small nodes are projects.</p>
 </section>
 
 <section id="education" aria-labelledby="h-edu">
@@ -124,28 +206,28 @@
 <section id="work" aria-labelledby="h-work">
   <h2 id="h-work">Selected work</h2>
   <div class="cards">
-    <article class="card">
+    <article class="card" id="thesis-fusarium" data-themes="rs trust">
   <ul class="chips"><li>Remote sensing</li><li>Evaluation</li></ul>
   <h3>Early detection of Fusarium in maize from satellite time series</h3>
   <p>Sentinel-1 radar, Sentinel-2 optical and weather data at a pilot site in the Gharb region (2024 season, 18 plots). Random Forest, MiniROCKET and a frozen Presto encoder were compared under one plot-level protocol. A negative control on the pre-sowing window, with no maize in the ground, still reached AUC 0.78, and position alone reached AUC 0.79: infected and healthy plots were spatially confounded. The honest conclusion is that the apparent skill cannot be credited to disease signal without a better experimental design.</p>
   
   <p class="meta">2026</p>
 </article>
-    <article class="card">
+    <article class="card" id="oran-rl" data-themes="rl">
   <ul class="chips"><li>Reinforcement learning</li><li>Wireless networks</li></ul>
   <h3>Energy-aware resource allocation for O-RAN with reinforcement learning</h3>
   <p>A custom Gym environment and a PPO agent written from scratch for a constrained control problem (15-dimensional state, 9 continuous actions), with AR(1) channel and Markov traffic dynamics and an explicit safety-first constraint hierarchy. It reaches +32.6% QoS and 43.1% lower energy use than a static baseline.</p>
   <p class="links"><a href="https://github.com/BriceZemba/Energy-Aware-Resource-Allocation-for-O-RAN-using-Reinforcement-Learning" target="_blank" rel="noopener noreferrer">Code</a><span aria-hidden="true"> · </span><a href="https://github.com/BriceZemba/Energy-Aware-Resource-Allocation-for-O-RAN-using-Reinforcement-Learning/blob/main/Technical_Report.pdf" target="_blank" rel="noopener noreferrer">Technical report</a></p>
   <p class="meta">2025</p>
 </article>
-    <article class="card">
+    <article class="card" id="gpt-scratch" data-themes="seq">
   <ul class="chips"><li>LLMs</li><li>Retrieval-augmented generation</li></ul>
   <h3>A GPT from first principles, with knowledge-graph RAG</h3>
   <p>Attention, positional encoding and autoregressive generation implemented from the equations and trained on 40M tokens, coupled to a Neo4j knowledge graph (200+ nodes, typed relations) for retrieval-augmented generation, reaching 80% top-3 precision.</p>
   <p class="links"><a href="https://github.com/BriceZemba/llm-from-scratch" target="_blank" rel="noopener noreferrer">Code</a><span aria-hidden="true"> · </span><a href="https://hal.science/view/index/docid/5481094" target="_blank" rel="noopener noreferrer">Preprint</a><span aria-hidden="true"> · </span><a href="https://medium.com/@bricezemba336/beyond-the-api-implementing-a-gpt-architecture-from-first-principles-e6079962e08d" target="_blank" rel="noopener noreferrer">Article</a></p>
   <p class="meta">2025</p>
 </article>
-    <article class="card">
+    <article class="card" id="deepred-shap" data-themes="trust">
   <ul class="chips"><li>Interpretability</li></ul>
   <h3>Symbolic rule extraction with DeepRED and SHAP</h3>
   <p>Extracts human-readable symbolic rules from trained neural networks and pairs them with Shapley attributions (92% fidelity), then measures how much the explanations shift under input perturbation.</p>
@@ -154,6 +236,24 @@
 </article>
   </div>
   <p class="more"><a href="/projects/">All 7 projects &rarr;</a></p>
+</section>
+
+<section id="negatives" aria-labelledby="h-neg">
+  <h2 id="h-neg">Negative results</h2>
+  <p class="lede small">The results that did not go my way taught me the most, so I keep them in plain sight.</p>
+  <ol class="neg"><li>
+    <h3>A control run that should have failed did not</h3>
+    <p>Retrained on the pre-sowing window, with no maize in the ground, the model still separated infected from healthy plots (AUC 0.78).</p>
+    <p class="lesson"><strong>Lesson.</strong> Healthy and infected plots sat in different blocks, so the model was recognising the block. Experimental design limits a result more than the algorithm does.</p>
+  </li><li>
+    <h3>Position alone almost matched the satellite bands</h3>
+    <p>Latitude and longitude alone, with no imagery, reached AUC 0.79 against 0.97 for all 90 variables in the first experiment.</p>
+    <p class="lesson"><strong>Lesson.</strong> Always test a trivial baseline that cannot possibly see the phenomenon.</p>
+  </li><li>
+    <h3>More prompts did not mean more harm found</h3>
+    <p>Red-teaming four African-language models, only two produced genuinely harmful outputs.</p>
+    <p class="lesson"><strong>Lesson.</strong> Quality and reproducibility of each attack mattered more than volume.</p>
+  </li></ol>
 </section>
 
 <section id="awards" aria-labelledby="h-awards">
@@ -198,9 +298,17 @@
   <div class="wrap foot">
     <span>&copy; 2026 Wendemi Brice Roméo Zemba</span>
     <span>Static site, no tracking, no cookies.</span>
-    <span><a href="/feed.xml">RSS feed</a></span>
+    <span>Last updated 2026-09-21 · <a href="/feed.xml">RSS feed</a></span>
   </div>
 </footer>
+<dialog id="palette" aria-label="Command palette" data-none="No result">
+  <div class="pal-box">
+    <input id="palette-input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Search pages, projects, links" autocomplete="off" spellcheck="false">
+    <ul id="palette-list" role="listbox"></ul>
+    <p class="pal-hint">Up and down to move, Enter to open, Esc to close</p>
+  </div>
+</dialog>
+<script type="application/json" id="palette-data">[{"g":"Pages","l":"Home","u":"/","k":""},{"g":"Pages","l":"Work","u":"/projects/","k":""},{"g":"Pages","l":"Writing","u":"/blog/","k":""},{"g":"Pages","l":"Teaching","u":"/teaching-talks/","k":""},{"g":"Pages","l":"CV","u":"/cv/","k":"resume curriculum"},{"g":"Sections","l":"News","u":"/#news","k":""},{"g":"Sections","l":"About me","u":"/#about","k":""},{"g":"Sections","l":"Research map","u":"/#map","k":""},{"g":"Sections","l":"Education","u":"/#education","k":""},{"g":"Sections","l":"Experience","u":"/#experience","k":""},{"g":"Sections","l":"Selected work","u":"/#work","k":""},{"g":"Sections","l":"Negative results","u":"/#negatives","k":""},{"g":"Sections","l":"Awards and certifications","u":"/#awards","k":""},{"g":"Sections","l":"Latest writing","u":"/#posts","k":""},{"g":"Projects","l":"Early detection of Fusarium in maize from satellite time series","u":"/projects/#thesis-fusarium","k":"Fusarium thesis Remote sensing Evaluation"},{"g":"Projects","l":"Energy-aware resource allocation for O-RAN with reinforcement learning","u":"/projects/#oran-rl","k":"O-RAN RL Reinforcement learning Wireless networks"},{"g":"Projects","l":"Decentralised multi-agent coordination with graph neural networks","u":"/projects/#gnn-agents","k":"GNN agents Multi-agent systems Graph neural networks"},{"g":"Projects","l":"A GPT from first principles, with knowledge-graph RAG","u":"/projects/#gpt-scratch","k":"GPT from scratch LLMs Retrieval-augmented generation"},{"g":"Projects","l":"Symbolic rule extraction with DeepRED and SHAP","u":"/projects/#deepred-shap","k":"DeepRED + SHAP Interpretability"},{"g":"Projects","l":"Anticipating cyber attacks with a Transformer","u":"/projects/#attack-chains","k":"ATT&CK Transformer Cybersecurity Sequence models"},{"g":"Projects","l":"Red-teaming LLMs in African languages (Zindi Trust and Safety challenge)","u":"/projects/#zindi-redteam","k":"LLM red-teaming AI safety Red-teaming"},{"g":"Links","l":"GitHub","u":"https://github.com/BriceZemba","k":"code repositories","x":1},{"g":"Links","l":"LinkedIn","u":"https://linkedin.com/in/wendemi-brice-romeo-zemba/","k":"","x":1},{"g":"Links","l":"Google Scholar","u":"https://scholar.google.com/citations?user=OHpJOGkAAAAJ&hl=en","k":"publications citations","x":1},{"g":"Links","l":"Medium","u":"https://medium.com/@bricezemba336","k":"articles blog","x":1},{"g":"Links","l":"Email","u":"mailto:bricezemba336@gmail.com","k":"contact mail"},{"g":"Actions","l":"Toggle dark mode","a":"theme","k":"dark light theme mode sombre clair"},{"g":"Actions","l":"Read in French","u":"/fr/","k":"language langue francais english"}]</script>
 <script src="/assets/main.js" defer></script>
 </body>
 </html>
